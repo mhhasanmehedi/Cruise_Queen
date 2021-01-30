@@ -1,5 +1,5 @@
 // Button event handler
-function handleClassChange(item, isIncrease) {
+function handleTicketTypeChange(item, isIncrease) {
     const itemCount = getInputValue(item);
     let newItemCount = itemCount;
     if (isIncrease == true) {
@@ -19,6 +19,7 @@ function handleClassChange(item, isIncrease) {
     document.getElementById(item + "-total").innerText = itemTotal;
     calculateTotal();
 }
+
 
 // Calculate Total 
 function calculateTotal() {
@@ -46,7 +47,7 @@ function getInputValue(item) {
 // Confirmation display area
 function confirmationMassage() {
     const grandTotal = document.getElementById('grand-total').innerText;
-    if (grandTotal != "$00") {
+    if (grandTotal != "$00" && grandTotal != "$0") {
         document.getElementById('header-none').style.display = 'none';
         document.getElementById('mainarea-none').style.display = 'none';
         document.getElementById('confirmation-area').style.display = 'block';
